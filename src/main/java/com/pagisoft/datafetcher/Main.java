@@ -7,9 +7,10 @@ public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-
     public static void main(String[] args) {
         System.out.println("test123");
+
+        new JerseyClient().getToken();
 
         LOGGER.info("Done");
     }
