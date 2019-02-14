@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
+import javax.ws.rs.core.Response;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,21 +57,25 @@ public class AllegroConnector implements Connector {
 
         client.destroy();
 
-        String jsonList = response.getEntity(String.class);
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(jsonList).getAsJsonObject();
-        JsonElement promotedList = object.get("items").getAsJsonObject().get("promoted");
-        JsonElement regularList = object.get("items").getAsJsonObject().get("regular");
-
-        Gson gson = new Gson();
-        Type resultType = new TypeToken<List<Object>>(){}.getType();
-
-        List<Object> promotedListResult = gson.fromJson(promotedList, resultType);
-        List<Object> regularListResult = gson.fromJson(regularList, resultType);
-
         List<Object> result = new ArrayList<Object>();
-        result.addAll(promotedListResult);
-        result.addAll(regularListResult);
+
+        if (Response.Status.OK.getStatusCode() == response.getStatus()) {
+            String jsonList = response.getEntity(String.class);
+
+            JsonParser parser = new JsonParser();
+            JsonObject object = parser.parse(jsonList).getAsJsonObject();
+            JsonElement promotedList = object.get("items").getAsJsonObject().get("promoted");
+            JsonElement regularList = object.get("items").getAsJsonObject().get("regular");
+
+            Gson gson = new Gson();
+            Type resultType = new TypeToken<List<Object>>(){}.getType();
+
+            List<Object> promotedListResult = gson.fromJson(promotedList, resultType);
+            List<Object> regularListResult = gson.fromJson(regularList, resultType);
+
+            result.addAll(promotedListResult);
+            result.addAll(regularListResult);
+        }
 
         return result;
     }

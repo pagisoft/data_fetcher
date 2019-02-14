@@ -1,11 +1,13 @@
 package com.pagisoft.datafetcher;
 
 import com.google.common.base.Stopwatch;
+import com.pagisoft.datafetcher.common.DataFileWriter;
 import com.pagisoft.datafetcher.connectors.Connector;
 import com.pagisoft.datafetcher.connectors.impl.AllegroConnector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,21 +15,31 @@ public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) {
+    private static final String FILE =  "D:\\Dane\\dane.json";
+
+    public static void main(String[] args) throws IOException {
 
         Stopwatch timer = Stopwatch.createStarted();
 
         Connector connector = new AllegroConnector();
 
         String token = connector.getToken();
+        LOGGER.info("Token: {}", token);
+
         List<Object> auctions = new ArrayList<Object>();
 
-        for (int i=0; i<100; i++) {
-            auctions.addAll(connector.getObjectList(100,i));
+        for (int i=0; i < 10000; i++) {
+            LOGGER.info("Iteration: {}", i);
+            List<Object> objects = connector.getObjectList(100, i);
+            LOGGER.info("Auctions count in iteration: {}", objects.size());
+            auctions.addAll(objects);
+            LOGGER.info("Final auctions count: {}", auctions.size());
         }
 
+        DataFileWriter dataFileWriter = new DataFileWriter();
+        dataFileWriter.writeStringToFile(auctions.toString(), FILE);
+
         LOGGER.info("Collecting objects [ size {} ] took: {}", auctions.size(), timer.stop());
-        LOGGER.info("Token: {}", token);
-        // LOGGER.info("Auction: {}", auctions);
+        // LOGGER.info("Auctions: {}", auctions);
     }
 }
