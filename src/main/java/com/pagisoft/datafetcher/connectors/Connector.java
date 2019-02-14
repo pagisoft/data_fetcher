@@ -1,8 +1,9 @@
 package com.pagisoft.datafetcher.connectors;
 
+import java.util.List;
 
 public interface Connector {
     String getToken();
 
-    String getObjectList();
+    List<Object> getObjectList(Integer limit, Integer offset);
 }
