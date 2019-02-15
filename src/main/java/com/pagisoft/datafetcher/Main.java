@@ -1,7 +1,6 @@
 package com.pagisoft.datafetcher;
 
 import com.google.common.base.Stopwatch;
-import com.pagisoft.datafetcher.common.DataFileWriter;
 import com.pagisoft.datafetcher.connectors.Connector;
 import com.pagisoft.datafetcher.connectors.impl.AllegroConnector;
 import org.apache.logging.log4j.LogManager;
@@ -35,8 +34,8 @@ public class Main {
             auctions.addAll(objects);
             LOGGER.info("Final auctions count: {}", auctions.size());
 
-            DataFileWriter dataFileWriter = new DataFileWriter();
-            dataFileWriter.writeStringToFile(objects.toString(), FILE);
+            //DataFileWriter dataFileWriter = new DataFileWriter();
+            //dataFileWriter.writeStringToFile(objects.toString(), FILE);
         }
 
         LOGGER.info("Collecting objects [ size {} ] took: {}", auctions.size(), timer.stop());

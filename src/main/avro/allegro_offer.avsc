@@ -1,0 +1,8 @@
+{"namespace": "com.pagisoft.datafetcher.domain.allegro",
+ "type": "record",
+ "name": "TestObject",
+ "fields": [
+     {"name": "objectId", "type": "long"},
+     {"name": "objectName", "type": ["string", "null"]}
+ ]
+}
