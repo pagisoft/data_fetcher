@@ -28,7 +28,7 @@ public class Main {
 
         List<Object> auctions = new ArrayList<Object>();
 
-        for (int i=0; i < 10000; i++) {
+        for (int i=0; i < 1; i++) {
             LOGGER.info("Iteration: {}", i);
             List<Object> objects = connector.getObjectList(100, i);
             LOGGER.info("Auctions count in iteration: {}", objects.size());
