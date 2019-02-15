@@ -34,10 +34,10 @@ public class Main {
             LOGGER.info("Auctions count in iteration: {}", objects.size());
             auctions.addAll(objects);
             LOGGER.info("Final auctions count: {}", auctions.size());
-        }
 
-        DataFileWriter dataFileWriter = new DataFileWriter();
-        dataFileWriter.writeStringToFile(auctions.toString(), FILE);
+            DataFileWriter dataFileWriter = new DataFileWriter();
+            dataFileWriter.writeStringToFile(objects.toString(), FILE);
+        }
 
         LOGGER.info("Collecting objects [ size {} ] took: {}", auctions.size(), timer.stop());
         // LOGGER.info("Auctions: {}", auctions);

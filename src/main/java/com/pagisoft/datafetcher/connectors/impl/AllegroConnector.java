@@ -3,6 +3,7 @@ package com.pagisoft.datafetcher.connectors.impl;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.pagisoft.datafetcher.connectors.Connector;
+import com.pagisoft.datafetcher.domain.allegro.Offer;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -68,10 +69,10 @@ public class AllegroConnector implements Connector {
             JsonElement regularList = object.get("items").getAsJsonObject().get("regular");
 
             Gson gson = new Gson();
-            Type resultType = new TypeToken<List<Object>>(){}.getType();
+            Type resultType = new TypeToken<List<Offer>>(){}.getType();
 
-            List<Object> promotedListResult = gson.fromJson(promotedList, resultType);
-            List<Object> regularListResult = gson.fromJson(regularList, resultType);
+            List<Offer> promotedListResult = gson.fromJson(promotedList, resultType);
+            List<Offer> regularListResult = gson.fromJson(regularList, resultType);
 
             result.addAll(promotedListResult);
             result.addAll(regularListResult);
