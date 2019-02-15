@@ -6,11 +6,10 @@ import java.io.PrintWriter;
 
 public class DataFileWriter {
 
-    public void writeStringToFile(String formatedData, String fileName) throws IOException {
+    public void writeStringToFile(String formattedData, String fileName) throws IOException {
         FileWriter fileWriter = new FileWriter(fileName);
         PrintWriter printWriter = new PrintWriter(fileWriter);
-        printWriter.print(formatedData);
+        printWriter.print(formattedData);
         printWriter.close();
     }
-
 }
