@@ -3,7 +3,7 @@ package com.pagisoft.datafetcher.connectors.impl;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.pagisoft.datafetcher.connectors.Connector;
-import com.pagisoft.datafetcher.domain.allegro.Offer;
+import com.pagisoft.datafetcher.model.allegro.Item;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -69,6 +69,42 @@ public class AllegroConnector implements Connector {
             JsonElement regularList = object.get("items").getAsJsonObject().get("regular");
 
             Gson gson = new Gson();
+            Type resultType = new TypeToken<List<Item>>(){}.getType();
+
+            List<Item> promotedListResult = gson.fromJson(promotedList, resultType);
+            List<Item> regularListResult = gson.fromJson(regularList, resultType);
+
+            result.addAll(promotedListResult);
+            result.addAll(regularListResult);
+        }
+
+        return result;
+    }
+
+    /** public List<Object> getObjectList(Integer limit, Integer offset) {
+
+        Client client = Client.create();
+
+        WebResource.Builder builder = client
+                .resource(API_URL + "offers/listing?category.id=258832&searchMode=CLOSED&limit=" + limit.toString() + "&offset=" + offset.toString())
+                .header("Authorization", "Bearer " + token)
+                .header("Accept", "application/vnd.allegro.public.v1+json" );
+
+        ClientResponse response = builder.get(ClientResponse.class);
+
+        client.destroy();
+
+        List<Object> result = new ArrayList<Object>();
+
+        if (Response.Status.OK.getStatusCode() == response.getStatus()) {
+            String jsonList = response.getEntity(String.class);
+
+            JsonParser parser = new JsonParser();
+            JsonObject object = parser.parse(jsonList).getAsJsonObject();
+            JsonElement promotedList = object.get("items").getAsJsonObject().get("promoted");
+            JsonElement regularList = object.get("items").getAsJsonObject().get("regular");
+
+            Gson gson = new Gson();
             Type resultType = new TypeToken<List<Offer>>(){}.getType();
 
             List<Offer> promotedListResult = gson.fromJson(promotedList, resultType);
@@ -79,6 +115,6 @@ public class AllegroConnector implements Connector {
         }
 
         return result;
-    }
+    } **/
 
 }

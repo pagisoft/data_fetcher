@@ -1,8 +1,157 @@
-{"namespace": "com.pagisoft.datafetcher.domain.allegro",
- "type": "record",
- "name": "TestObject",
- "fields": [
-     {"name": "objectId", "type": "long"},
-     {"name": "objectName", "type": ["string", "null"]}
- ]
+{
+    "namespace": "com.pagisoft.datafetcher.model.allegro",
+    "name": "Item",
+    "type": "record",
+    "fields": [
+        {
+            "name": "id",
+            "type": "long"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "seller",
+			"type": [ "null", {
+				"name": "Seller",
+				"type": "record",
+				"fields": [
+					{
+						"name": "id",
+						"type": "long"
+					},
+					{
+						"name": "company",
+						"type": "boolean"
+					},
+					{
+						"name": "superSeller",
+						"type": "boolean"
+					}
+				]
+			}]
+        },
+		{
+            "name": "promotion",
+			"type": [ "null", {
+				"name": "Promotion",
+				"type": "record",
+				"fields": [
+					{
+						"name": "emphasized",
+						"type": "boolean"
+					},
+					{
+						"name": "bold",
+						"type": "boolean"
+					},
+					{
+						"name": "highlight",
+						"type": "boolean"
+					}
+				]
+			}]
+        },
+		{
+            "name": "delivery",
+			"type": [ "null", {
+				"name": "Delivery",
+				"type": "record",
+				"fields": [
+					{
+						"name": "availableForFree",
+						"type": "boolean"
+					},
+					{
+						"name": "lowestPrice",
+						"type": [ "null", {
+							"name": "LowestPrice",
+							"type": "record",
+							"fields": [
+								{
+									"name": "amount",
+									"type": "float"
+								},
+								{
+									"name": "currency",
+									"type": "string"
+								}
+							]
+						}]
+					}
+				]
+			}]
+        },
+		{
+            "name": "images",
+			"type": {
+				"type": "array",
+				"items": {
+					"name": "Url",
+                    "type": "record",
+                    "fields": [
+                    {
+                        "name": "url",
+                        "type": "string"
+                    }]
+				}
+			}
+        },
+		{
+            "name": "sellingMode",
+			"type": [ "null", {
+				"name": "SellingMode",
+				"type": "record",
+				"fields": [
+					{
+						"name": "format",
+						"type": "string"
+					},
+					{
+						"name": "price",
+						"type": [ "null", {
+							"name": "Price",
+							"type": "record",
+							"fields": [
+								{
+									"name": "amount",
+									"type": "float"
+								},
+								{
+									"name": "currency",
+									"type": "string"
+								}
+							]
+						}]
+					},
+					{
+						"name": "fixedPrice",
+						"type": [ "null", {
+							"name": "FixedPrice",
+							"type": "record",
+							"fields": [
+								{
+									"name": "amount",
+									"type": "float"
+								},
+								{
+									"name": "currency",
+									"type": "string"
+								}
+							]
+						}]
+					},
+					{
+						"name": "popularity",
+						"type": "long"
+					},
+					{
+						"name": "bidCount",
+						"type": "long"
+					}
+				]
+			}]
+        }
+    ]
 }
