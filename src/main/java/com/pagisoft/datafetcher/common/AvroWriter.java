@@ -1,6 +1,5 @@
 package com.pagisoft.datafetcher.common;
 
-import com.pagisoft.datafetcher.domain.allegro.TestObject;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
@@ -20,7 +19,7 @@ public class AvroWriter {
 
         LOGGER.info("here");
 
-        List<TestObject> objectList = new ArrayList<TestObject>();
+        /**List<TestObject> objectList = new ArrayList<TestObject>();
         objectList.add(new TestObject(22L, "Nazwa Abc"));
         objectList.add(new TestObject(24L, "Nazwa Def"));
         objectList.add(new TestObject(26L, "Nazwa Ghi"));
@@ -50,7 +49,7 @@ public class AvroWriter {
         }
 
 
-        //return null;
+        //return null; **/
     }
 
 }
