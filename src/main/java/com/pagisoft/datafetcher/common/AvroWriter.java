@@ -1,5 +1,6 @@
 package com.pagisoft.datafetcher.common;
 
+import com.pagisoft.datafetcher.model.allegro.Item;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
@@ -15,41 +16,34 @@ public class AvroWriter {
 
     private static final Logger LOGGER = LogManager.getLogger(AvroWriter.class);
 
-    public void storeAvroFile() {
+    public void storeAvroData(List<Object> objectsListToStore) {
 
-        LOGGER.info("here");
+        LOGGER.info("Start writing to avro...");
 
-        /**List<TestObject> objectList = new ArrayList<TestObject>();
-        objectList.add(new TestObject(22L, "Nazwa Abc"));
-        objectList.add(new TestObject(24L, "Nazwa Def"));
-        objectList.add(new TestObject(26L, "Nazwa Ghi"));
+        toAvroBinary(objectsListToStore);
 
-        toAvroBinary(objectList);
-
-        LOGGER.info(objectList.get(0).getObjectName());
+        LOGGER.info("Completed writing to avro.");
     }
 
-    private void toAvroBinary(final List<TestObject> objectList) {
+    private void toAvroBinary(final List<Object> objectList) {
 
         File avroOutputFile = new File("D:\\Dane\\testobjects.avro");
 
-        final DatumWriter<TestObject> datumWriter = new SpecificDatumWriter<TestObject>(TestObject.class);
-        final DataFileWriter<TestObject> dataFileWriter = new DataFileWriter<TestObject>(datumWriter);
+        final DatumWriter<Item> datumWriter = new SpecificDatumWriter<Item>(Item.class);
+        final DataFileWriter<Item> dataFileWriter = new DataFileWriter<Item>(datumWriter);
 
         try {
-            LOGGER.info("create");
-            dataFileWriter.create(TestObject.getClassSchema(), avroOutputFile);
-            dataFileWriter.append(objectList.get(0));
-            dataFileWriter.append(objectList.get(1));
-            dataFileWriter.append(objectList.get(2));
+            dataFileWriter.create(Item.getClassSchema(), avroOutputFile);
+
+            for (int i = 0; i < objectList.size(); i++) {
+                dataFileWriter.append((Item) objectList.get(i));
+            }
+
             dataFileWriter.close();
-            LOGGER.info("done");
+            LOGGER.info("Done.");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-        //return null; **/
     }
 
 }
