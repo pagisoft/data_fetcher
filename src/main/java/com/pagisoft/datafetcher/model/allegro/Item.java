@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Item extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 14231777992218820L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Item\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"seller\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Seller\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"company\",\"type\":\"boolean\"},{\"name\":\"superSeller\",\"type\":\"boolean\"}]}]},{\"name\":\"promotion\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Promotion\",\"fields\":[{\"name\":\"emphasized\",\"type\":\"boolean\"},{\"name\":\"bold\",\"type\":\"boolean\"},{\"name\":\"highlight\",\"type\":\"boolean\"}]}]},{\"name\":\"delivery\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Delivery\",\"fields\":[{\"name\":\"availableForFree\",\"type\":\"boolean\"},{\"name\":\"lowestPrice\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LowestPrice\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]}]}]},{\"name\":\"images\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Url\",\"fields\":[{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}},{\"name\":\"sellingMode\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SellingMode\",\"fields\":[{\"name\":\"format\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"price\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Price\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"fixedPrice\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FixedPrice\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"popularity\",\"type\":\"long\"},{\"name\":\"bidCount\",\"type\":\"long\"}]}]}]}");
+  private static final long serialVersionUID = 4630348365678964489L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Item\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"seller\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Seller\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"company\",\"type\":\"boolean\"},{\"name\":\"superSeller\",\"type\":\"boolean\"}]}]},{\"name\":\"promotion\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Promotion\",\"fields\":[{\"name\":\"emphasized\",\"type\":\"boolean\"},{\"name\":\"bold\",\"type\":\"boolean\"},{\"name\":\"highlight\",\"type\":\"boolean\"}]}]},{\"name\":\"delivery\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Delivery\",\"fields\":[{\"name\":\"availableForFree\",\"type\":\"boolean\"},{\"name\":\"lowestPrice\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LowestPrice\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]}]}]},{\"name\":\"images\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Url\",\"fields\":[{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}},{\"name\":\"sellingMode\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SellingMode\",\"fields\":[{\"name\":\"format\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"price\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Price\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"fixedPrice\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FixedPrice\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"popularity\",\"type\":\"long\"},{\"name\":\"bidCount\",\"type\":\"long\"}]}]},{\"name\":\"stock\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Stock\",\"fields\":[{\"name\":\"unit\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"available\",\"type\":\"long\"}]}]},{\"name\":\"vendor\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vendor\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"category\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Category\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"}]}]},{\"name\":\"publication\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Publication\",\"fields\":[{\"name\":\"endingAt\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -58,6 +58,10 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
   @Deprecated public com.pagisoft.datafetcher.model.allegro.Delivery delivery;
   @Deprecated public java.util.List<com.pagisoft.datafetcher.model.allegro.Url> images;
   @Deprecated public com.pagisoft.datafetcher.model.allegro.SellingMode sellingMode;
+  @Deprecated public com.pagisoft.datafetcher.model.allegro.Stock stock;
+  @Deprecated public com.pagisoft.datafetcher.model.allegro.Vendor vendor;
+  @Deprecated public com.pagisoft.datafetcher.model.allegro.Category category;
+  @Deprecated public com.pagisoft.datafetcher.model.allegro.Publication publication;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -75,8 +79,12 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
    * @param delivery The new value for delivery
    * @param images The new value for images
    * @param sellingMode The new value for sellingMode
+   * @param stock The new value for stock
+   * @param vendor The new value for vendor
+   * @param category The new value for category
+   * @param publication The new value for publication
    */
-  public Item(java.lang.Long id, java.lang.String name, com.pagisoft.datafetcher.model.allegro.Seller seller, com.pagisoft.datafetcher.model.allegro.Promotion promotion, com.pagisoft.datafetcher.model.allegro.Delivery delivery, java.util.List<com.pagisoft.datafetcher.model.allegro.Url> images, com.pagisoft.datafetcher.model.allegro.SellingMode sellingMode) {
+  public Item(java.lang.Long id, java.lang.String name, com.pagisoft.datafetcher.model.allegro.Seller seller, com.pagisoft.datafetcher.model.allegro.Promotion promotion, com.pagisoft.datafetcher.model.allegro.Delivery delivery, java.util.List<com.pagisoft.datafetcher.model.allegro.Url> images, com.pagisoft.datafetcher.model.allegro.SellingMode sellingMode, com.pagisoft.datafetcher.model.allegro.Stock stock, com.pagisoft.datafetcher.model.allegro.Vendor vendor, com.pagisoft.datafetcher.model.allegro.Category category, com.pagisoft.datafetcher.model.allegro.Publication publication) {
     this.id = id;
     this.name = name;
     this.seller = seller;
@@ -84,6 +92,10 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
     this.delivery = delivery;
     this.images = images;
     this.sellingMode = sellingMode;
+    this.stock = stock;
+    this.vendor = vendor;
+    this.category = category;
+    this.publication = publication;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -97,6 +109,10 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
     case 4: return delivery;
     case 5: return images;
     case 6: return sellingMode;
+    case 7: return stock;
+    case 8: return vendor;
+    case 9: return category;
+    case 10: return publication;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -112,6 +128,10 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
     case 4: delivery = (com.pagisoft.datafetcher.model.allegro.Delivery)value$; break;
     case 5: images = (java.util.List<com.pagisoft.datafetcher.model.allegro.Url>)value$; break;
     case 6: sellingMode = (com.pagisoft.datafetcher.model.allegro.SellingMode)value$; break;
+    case 7: stock = (com.pagisoft.datafetcher.model.allegro.Stock)value$; break;
+    case 8: vendor = (com.pagisoft.datafetcher.model.allegro.Vendor)value$; break;
+    case 9: category = (com.pagisoft.datafetcher.model.allegro.Category)value$; break;
+    case 10: publication = (com.pagisoft.datafetcher.model.allegro.Publication)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -229,6 +249,70 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
+   * Gets the value of the 'stock' field.
+   * @return The value of the 'stock' field.
+   */
+  public com.pagisoft.datafetcher.model.allegro.Stock getStock() {
+    return stock;
+  }
+
+  /**
+   * Sets the value of the 'stock' field.
+   * @param value the value to set.
+   */
+  public void setStock(com.pagisoft.datafetcher.model.allegro.Stock value) {
+    this.stock = value;
+  }
+
+  /**
+   * Gets the value of the 'vendor' field.
+   * @return The value of the 'vendor' field.
+   */
+  public com.pagisoft.datafetcher.model.allegro.Vendor getVendor() {
+    return vendor;
+  }
+
+  /**
+   * Sets the value of the 'vendor' field.
+   * @param value the value to set.
+   */
+  public void setVendor(com.pagisoft.datafetcher.model.allegro.Vendor value) {
+    this.vendor = value;
+  }
+
+  /**
+   * Gets the value of the 'category' field.
+   * @return The value of the 'category' field.
+   */
+  public com.pagisoft.datafetcher.model.allegro.Category getCategory() {
+    return category;
+  }
+
+  /**
+   * Sets the value of the 'category' field.
+   * @param value the value to set.
+   */
+  public void setCategory(com.pagisoft.datafetcher.model.allegro.Category value) {
+    this.category = value;
+  }
+
+  /**
+   * Gets the value of the 'publication' field.
+   * @return The value of the 'publication' field.
+   */
+  public com.pagisoft.datafetcher.model.allegro.Publication getPublication() {
+    return publication;
+  }
+
+  /**
+   * Sets the value of the 'publication' field.
+   * @param value the value to set.
+   */
+  public void setPublication(com.pagisoft.datafetcher.model.allegro.Publication value) {
+    this.publication = value;
+  }
+
+  /**
    * Creates a new Item RecordBuilder.
    * @return A new Item RecordBuilder
    */
@@ -271,6 +355,14 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
     private java.util.List<com.pagisoft.datafetcher.model.allegro.Url> images;
     private com.pagisoft.datafetcher.model.allegro.SellingMode sellingMode;
     private com.pagisoft.datafetcher.model.allegro.SellingMode.Builder sellingModeBuilder;
+    private com.pagisoft.datafetcher.model.allegro.Stock stock;
+    private com.pagisoft.datafetcher.model.allegro.Stock.Builder stockBuilder;
+    private com.pagisoft.datafetcher.model.allegro.Vendor vendor;
+    private com.pagisoft.datafetcher.model.allegro.Vendor.Builder vendorBuilder;
+    private com.pagisoft.datafetcher.model.allegro.Category category;
+    private com.pagisoft.datafetcher.model.allegro.Category.Builder categoryBuilder;
+    private com.pagisoft.datafetcher.model.allegro.Publication publication;
+    private com.pagisoft.datafetcher.model.allegro.Publication.Builder publicationBuilder;
 
     /** Creates a new Builder */
     private Builder() {
@@ -323,6 +415,34 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
       if (other.hasSellingModeBuilder()) {
         this.sellingModeBuilder = com.pagisoft.datafetcher.model.allegro.SellingMode.newBuilder(other.getSellingModeBuilder());
       }
+      if (isValidValue(fields()[7], other.stock)) {
+        this.stock = data().deepCopy(fields()[7].schema(), other.stock);
+        fieldSetFlags()[7] = true;
+      }
+      if (other.hasStockBuilder()) {
+        this.stockBuilder = com.pagisoft.datafetcher.model.allegro.Stock.newBuilder(other.getStockBuilder());
+      }
+      if (isValidValue(fields()[8], other.vendor)) {
+        this.vendor = data().deepCopy(fields()[8].schema(), other.vendor);
+        fieldSetFlags()[8] = true;
+      }
+      if (other.hasVendorBuilder()) {
+        this.vendorBuilder = com.pagisoft.datafetcher.model.allegro.Vendor.newBuilder(other.getVendorBuilder());
+      }
+      if (isValidValue(fields()[9], other.category)) {
+        this.category = data().deepCopy(fields()[9].schema(), other.category);
+        fieldSetFlags()[9] = true;
+      }
+      if (other.hasCategoryBuilder()) {
+        this.categoryBuilder = com.pagisoft.datafetcher.model.allegro.Category.newBuilder(other.getCategoryBuilder());
+      }
+      if (isValidValue(fields()[10], other.publication)) {
+        this.publication = data().deepCopy(fields()[10].schema(), other.publication);
+        fieldSetFlags()[10] = true;
+      }
+      if (other.hasPublicationBuilder()) {
+        this.publicationBuilder = com.pagisoft.datafetcher.model.allegro.Publication.newBuilder(other.getPublicationBuilder());
+      }
     }
 
     /**
@@ -363,6 +483,26 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
         fieldSetFlags()[6] = true;
       }
       this.sellingModeBuilder = null;
+      if (isValidValue(fields()[7], other.stock)) {
+        this.stock = data().deepCopy(fields()[7].schema(), other.stock);
+        fieldSetFlags()[7] = true;
+      }
+      this.stockBuilder = null;
+      if (isValidValue(fields()[8], other.vendor)) {
+        this.vendor = data().deepCopy(fields()[8].schema(), other.vendor);
+        fieldSetFlags()[8] = true;
+      }
+      this.vendorBuilder = null;
+      if (isValidValue(fields()[9], other.category)) {
+        this.category = data().deepCopy(fields()[9].schema(), other.category);
+        fieldSetFlags()[9] = true;
+      }
+      this.categoryBuilder = null;
+      if (isValidValue(fields()[10], other.publication)) {
+        this.publication = data().deepCopy(fields()[10].schema(), other.publication);
+        fieldSetFlags()[10] = true;
+      }
+      this.publicationBuilder = null;
     }
 
     /**
@@ -777,6 +917,302 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
+    /**
+      * Gets the value of the 'stock' field.
+      * @return The value.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Stock getStock() {
+      return stock;
+    }
+
+    /**
+      * Sets the value of the 'stock' field.
+      * @param value The value of 'stock'.
+      * @return This builder.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setStock(com.pagisoft.datafetcher.model.allegro.Stock value) {
+      validate(fields()[7], value);
+      this.stockBuilder = null;
+      this.stock = value;
+      fieldSetFlags()[7] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'stock' field has been set.
+      * @return True if the 'stock' field has been set, false otherwise.
+      */
+    public boolean hasStock() {
+      return fieldSetFlags()[7];
+    }
+
+    /**
+     * Gets the Builder instance for the 'stock' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public com.pagisoft.datafetcher.model.allegro.Stock.Builder getStockBuilder() {
+      if (stockBuilder == null) {
+        if (hasStock()) {
+          setStockBuilder(com.pagisoft.datafetcher.model.allegro.Stock.newBuilder(stock));
+        } else {
+          setStockBuilder(com.pagisoft.datafetcher.model.allegro.Stock.newBuilder());
+        }
+      }
+      return stockBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'stock' field
+     * @param value The builder instance that must be set.
+     * @return This builder.
+     */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setStockBuilder(com.pagisoft.datafetcher.model.allegro.Stock.Builder value) {
+      clearStock();
+      stockBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'stock' field has an active Builder instance
+     * @return True if the 'stock' field has an active Builder instance
+     */
+    public boolean hasStockBuilder() {
+      return stockBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'stock' field.
+      * @return This builder.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder clearStock() {
+      stock = null;
+      stockBuilder = null;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'vendor' field.
+      * @return The value.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Vendor getVendor() {
+      return vendor;
+    }
+
+    /**
+      * Sets the value of the 'vendor' field.
+      * @param value The value of 'vendor'.
+      * @return This builder.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setVendor(com.pagisoft.datafetcher.model.allegro.Vendor value) {
+      validate(fields()[8], value);
+      this.vendorBuilder = null;
+      this.vendor = value;
+      fieldSetFlags()[8] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'vendor' field has been set.
+      * @return True if the 'vendor' field has been set, false otherwise.
+      */
+    public boolean hasVendor() {
+      return fieldSetFlags()[8];
+    }
+
+    /**
+     * Gets the Builder instance for the 'vendor' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public com.pagisoft.datafetcher.model.allegro.Vendor.Builder getVendorBuilder() {
+      if (vendorBuilder == null) {
+        if (hasVendor()) {
+          setVendorBuilder(com.pagisoft.datafetcher.model.allegro.Vendor.newBuilder(vendor));
+        } else {
+          setVendorBuilder(com.pagisoft.datafetcher.model.allegro.Vendor.newBuilder());
+        }
+      }
+      return vendorBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'vendor' field
+     * @param value The builder instance that must be set.
+     * @return This builder.
+     */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setVendorBuilder(com.pagisoft.datafetcher.model.allegro.Vendor.Builder value) {
+      clearVendor();
+      vendorBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'vendor' field has an active Builder instance
+     * @return True if the 'vendor' field has an active Builder instance
+     */
+    public boolean hasVendorBuilder() {
+      return vendorBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'vendor' field.
+      * @return This builder.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder clearVendor() {
+      vendor = null;
+      vendorBuilder = null;
+      fieldSetFlags()[8] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'category' field.
+      * @return The value.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Category getCategory() {
+      return category;
+    }
+
+    /**
+      * Sets the value of the 'category' field.
+      * @param value The value of 'category'.
+      * @return This builder.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setCategory(com.pagisoft.datafetcher.model.allegro.Category value) {
+      validate(fields()[9], value);
+      this.categoryBuilder = null;
+      this.category = value;
+      fieldSetFlags()[9] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'category' field has been set.
+      * @return True if the 'category' field has been set, false otherwise.
+      */
+    public boolean hasCategory() {
+      return fieldSetFlags()[9];
+    }
+
+    /**
+     * Gets the Builder instance for the 'category' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public com.pagisoft.datafetcher.model.allegro.Category.Builder getCategoryBuilder() {
+      if (categoryBuilder == null) {
+        if (hasCategory()) {
+          setCategoryBuilder(com.pagisoft.datafetcher.model.allegro.Category.newBuilder(category));
+        } else {
+          setCategoryBuilder(com.pagisoft.datafetcher.model.allegro.Category.newBuilder());
+        }
+      }
+      return categoryBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'category' field
+     * @param value The builder instance that must be set.
+     * @return This builder.
+     */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setCategoryBuilder(com.pagisoft.datafetcher.model.allegro.Category.Builder value) {
+      clearCategory();
+      categoryBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'category' field has an active Builder instance
+     * @return True if the 'category' field has an active Builder instance
+     */
+    public boolean hasCategoryBuilder() {
+      return categoryBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'category' field.
+      * @return This builder.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder clearCategory() {
+      category = null;
+      categoryBuilder = null;
+      fieldSetFlags()[9] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'publication' field.
+      * @return The value.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Publication getPublication() {
+      return publication;
+    }
+
+    /**
+      * Sets the value of the 'publication' field.
+      * @param value The value of 'publication'.
+      * @return This builder.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setPublication(com.pagisoft.datafetcher.model.allegro.Publication value) {
+      validate(fields()[10], value);
+      this.publicationBuilder = null;
+      this.publication = value;
+      fieldSetFlags()[10] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'publication' field has been set.
+      * @return True if the 'publication' field has been set, false otherwise.
+      */
+    public boolean hasPublication() {
+      return fieldSetFlags()[10];
+    }
+
+    /**
+     * Gets the Builder instance for the 'publication' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public com.pagisoft.datafetcher.model.allegro.Publication.Builder getPublicationBuilder() {
+      if (publicationBuilder == null) {
+        if (hasPublication()) {
+          setPublicationBuilder(com.pagisoft.datafetcher.model.allegro.Publication.newBuilder(publication));
+        } else {
+          setPublicationBuilder(com.pagisoft.datafetcher.model.allegro.Publication.newBuilder());
+        }
+      }
+      return publicationBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'publication' field
+     * @param value The builder instance that must be set.
+     * @return This builder.
+     */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setPublicationBuilder(com.pagisoft.datafetcher.model.allegro.Publication.Builder value) {
+      clearPublication();
+      publicationBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'publication' field has an active Builder instance
+     * @return True if the 'publication' field has an active Builder instance
+     */
+    public boolean hasPublicationBuilder() {
+      return publicationBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'publication' field.
+      * @return This builder.
+      */
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder clearPublication() {
+      publication = null;
+      publicationBuilder = null;
+      fieldSetFlags()[10] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public Item build() {
@@ -804,6 +1240,26 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
           record.sellingMode = this.sellingModeBuilder.build();
         } else {
           record.sellingMode = fieldSetFlags()[6] ? this.sellingMode : (com.pagisoft.datafetcher.model.allegro.SellingMode) defaultValue(fields()[6]);
+        }
+        if (stockBuilder != null) {
+          record.stock = this.stockBuilder.build();
+        } else {
+          record.stock = fieldSetFlags()[7] ? this.stock : (com.pagisoft.datafetcher.model.allegro.Stock) defaultValue(fields()[7]);
+        }
+        if (vendorBuilder != null) {
+          record.vendor = this.vendorBuilder.build();
+        } else {
+          record.vendor = fieldSetFlags()[8] ? this.vendor : (com.pagisoft.datafetcher.model.allegro.Vendor) defaultValue(fields()[8]);
+        }
+        if (categoryBuilder != null) {
+          record.category = this.categoryBuilder.build();
+        } else {
+          record.category = fieldSetFlags()[9] ? this.category : (com.pagisoft.datafetcher.model.allegro.Category) defaultValue(fields()[9]);
+        }
+        if (publicationBuilder != null) {
+          record.publication = this.publicationBuilder.build();
+        } else {
+          record.publication = fieldSetFlags()[10] ? this.publication : (com.pagisoft.datafetcher.model.allegro.Publication) defaultValue(fields()[10]);
         }
         return record;
       } catch (java.lang.Exception e) {

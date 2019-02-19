@@ -152,6 +152,66 @@
 					}
 				]
 			}]
+        },
+		{
+            "name": "stock",
+			"type": [ "null", {
+				"name": "Stock",
+				"type": "record",
+				"fields": [
+					{
+						"name": "unit",
+						"type": "string"
+					},
+					{
+						"name": "available",
+						"type": "long"
+					}
+				]
+			}]
+        },
+		{
+            "name": "vendor",
+			"type": [ "null", {
+				"name": "Vendor",
+				"type": "record",
+				"fields": [
+					{
+						"name": "id",
+						"type": "long"
+					},
+					{
+						"name": "url",
+						"type": "string"
+					}
+				]
+			}]
+        },
+		{
+            "name": "category",
+			"type": [ "null", {
+				"name": "Category",
+				"type": "record",
+				"fields": [
+					{
+						"name": "id",
+						"type": "long"
+					}
+				]
+			}]
+        },
+		{
+            "name": "publication",
+			"type": [ "null", {
+				"name": "Publication",
+				"type": "record",
+				"fields": [
+					{
+						"name": "endingAt",
+						"type": "string"
+					}
+				]
+			}]
         }
     ]
 }
