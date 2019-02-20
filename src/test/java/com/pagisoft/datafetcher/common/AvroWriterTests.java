@@ -21,7 +21,7 @@ public class AvroWriterTests {
 
         List<Object> auctions = new ArrayList<Object>();
 
-        for (int i=0; i < 100; i++) {
+        for (int i=0; i < 1; i++) {
             LOGGER.info("Iteration: {}", i);
             List<Object> objects = allegroConnector.getObjectList(100, i * 100);
             LOGGER.info("Auctions count in iteration: {}", objects.size());

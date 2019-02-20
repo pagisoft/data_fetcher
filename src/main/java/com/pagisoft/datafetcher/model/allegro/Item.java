@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Item extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4630348365678964489L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Item\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"seller\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Seller\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"company\",\"type\":\"boolean\"},{\"name\":\"superSeller\",\"type\":\"boolean\"}]}]},{\"name\":\"promotion\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Promotion\",\"fields\":[{\"name\":\"emphasized\",\"type\":\"boolean\"},{\"name\":\"bold\",\"type\":\"boolean\"},{\"name\":\"highlight\",\"type\":\"boolean\"}]}]},{\"name\":\"delivery\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Delivery\",\"fields\":[{\"name\":\"availableForFree\",\"type\":\"boolean\"},{\"name\":\"lowestPrice\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LowestPrice\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]}]}]},{\"name\":\"images\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Url\",\"fields\":[{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}},{\"name\":\"sellingMode\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SellingMode\",\"fields\":[{\"name\":\"format\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"price\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Price\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"fixedPrice\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FixedPrice\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"popularity\",\"type\":\"long\"},{\"name\":\"bidCount\",\"type\":\"long\"}]}]},{\"name\":\"stock\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Stock\",\"fields\":[{\"name\":\"unit\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"available\",\"type\":\"long\"}]}]},{\"name\":\"vendor\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vendor\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"category\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Category\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"}]}]},{\"name\":\"publication\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Publication\",\"fields\":[{\"name\":\"endingAt\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]}]}");
+  private static final long serialVersionUID = 8138505950298213330L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Item\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"seller\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Seller\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"company\",\"type\":\"boolean\"},{\"name\":\"superSeller\",\"type\":\"boolean\"}]}]},{\"name\":\"promotion\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Promotion\",\"fields\":[{\"name\":\"emphasized\",\"type\":\"boolean\"},{\"name\":\"bold\",\"type\":\"boolean\"},{\"name\":\"highlight\",\"type\":\"boolean\"}]}]},{\"name\":\"delivery\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Delivery\",\"fields\":[{\"name\":\"availableForFree\",\"type\":\"boolean\"},{\"name\":\"lowestPrice\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"LowestPrice\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]}]}]},{\"name\":\"images\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Url\",\"fields\":[{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}},{\"name\":\"sellingMode\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SellingMode\",\"fields\":[{\"name\":\"format\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"price\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Price\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"fixedPrice\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FixedPrice\",\"fields\":[{\"name\":\"amount\",\"type\":\"float\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"popularity\",\"type\":\"long\"},{\"name\":\"bidCount\",\"type\":\"long\"}]}]},{\"name\":\"stock\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Stock\",\"fields\":[{\"name\":\"unit\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"available\",\"type\":\"long\"}]}]},{\"name\":\"vendor\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Vendor\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"category\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Category\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]},{\"name\":\"publication\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Publication\",\"fields\":[{\"name\":\"endingAt\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -51,7 +51,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
     return DECODER.decode(b);
   }
 
-  @Deprecated public long id;
+  @Deprecated public java.lang.String id;
   @Deprecated public java.lang.String name;
   @Deprecated public com.pagisoft.datafetcher.model.allegro.Seller seller;
   @Deprecated public com.pagisoft.datafetcher.model.allegro.Promotion promotion;
@@ -84,7 +84,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
    * @param category The new value for category
    * @param publication The new value for publication
    */
-  public Item(java.lang.Long id, java.lang.String name, com.pagisoft.datafetcher.model.allegro.Seller seller, com.pagisoft.datafetcher.model.allegro.Promotion promotion, com.pagisoft.datafetcher.model.allegro.Delivery delivery, java.util.List<com.pagisoft.datafetcher.model.allegro.Url> images, com.pagisoft.datafetcher.model.allegro.SellingMode sellingMode, com.pagisoft.datafetcher.model.allegro.Stock stock, com.pagisoft.datafetcher.model.allegro.Vendor vendor, com.pagisoft.datafetcher.model.allegro.Category category, com.pagisoft.datafetcher.model.allegro.Publication publication) {
+  public Item(java.lang.String id, java.lang.String name, com.pagisoft.datafetcher.model.allegro.Seller seller, com.pagisoft.datafetcher.model.allegro.Promotion promotion, com.pagisoft.datafetcher.model.allegro.Delivery delivery, java.util.List<com.pagisoft.datafetcher.model.allegro.Url> images, com.pagisoft.datafetcher.model.allegro.SellingMode sellingMode, com.pagisoft.datafetcher.model.allegro.Stock stock, com.pagisoft.datafetcher.model.allegro.Vendor vendor, com.pagisoft.datafetcher.model.allegro.Category category, com.pagisoft.datafetcher.model.allegro.Publication publication) {
     this.id = id;
     this.name = name;
     this.seller = seller;
@@ -121,7 +121,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.Long)value$; break;
+    case 0: id = (java.lang.String)value$; break;
     case 1: name = (java.lang.String)value$; break;
     case 2: seller = (com.pagisoft.datafetcher.model.allegro.Seller)value$; break;
     case 3: promotion = (com.pagisoft.datafetcher.model.allegro.Promotion)value$; break;
@@ -140,7 +140,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
    * Gets the value of the 'id' field.
    * @return The value of the 'id' field.
    */
-  public java.lang.Long getId() {
+  public java.lang.String getId() {
     return id;
   }
 
@@ -148,7 +148,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
    * Sets the value of the 'id' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.Long value) {
+  public void setId(java.lang.String value) {
     this.id = value;
   }
 
@@ -344,7 +344,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Item>
     implements org.apache.avro.data.RecordBuilder<Item> {
 
-    private long id;
+    private java.lang.String id;
     private java.lang.String name;
     private com.pagisoft.datafetcher.model.allegro.Seller seller;
     private com.pagisoft.datafetcher.model.allegro.Seller.Builder sellerBuilder;
@@ -509,7 +509,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
       * Gets the value of the 'id' field.
       * @return The value.
       */
-    public java.lang.Long getId() {
+    public java.lang.String getId() {
       return id;
     }
 
@@ -518,7 +518,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.pagisoft.datafetcher.model.allegro.Item.Builder setId(long value) {
+    public com.pagisoft.datafetcher.model.allegro.Item.Builder setId(java.lang.String value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -539,6 +539,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
       * @return This builder.
       */
     public com.pagisoft.datafetcher.model.allegro.Item.Builder clearId() {
+      id = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -1218,7 +1219,7 @@ public class Item extends org.apache.avro.specific.SpecificRecordBase implements
     public Item build() {
       try {
         Item record = new Item();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
+        record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.String) defaultValue(fields()[1]);
         if (sellerBuilder != null) {
           record.seller = this.sellerBuilder.build();

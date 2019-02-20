@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Vendor extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -6107272685228866077L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Vendor\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  private static final long serialVersionUID = -8586581016437980240L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Vendor\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -51,7 +51,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
     return DECODER.decode(b);
   }
 
-  @Deprecated public long id;
+  @Deprecated public java.lang.String id;
   @Deprecated public java.lang.String url;
 
   /**
@@ -66,7 +66,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param id The new value for id
    * @param url The new value for url
    */
-  public Vendor(java.lang.Long id, java.lang.String url) {
+  public Vendor(java.lang.String id, java.lang.String url) {
     this.id = id;
     this.url = url;
   }
@@ -85,7 +85,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.Long)value$; break;
+    case 0: id = (java.lang.String)value$; break;
     case 1: url = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -95,7 +95,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'id' field.
    * @return The value of the 'id' field.
    */
-  public java.lang.Long getId() {
+  public java.lang.String getId() {
     return id;
   }
 
@@ -103,7 +103,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'id' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.Long value) {
+  public void setId(java.lang.String value) {
     this.id = value;
   }
 
@@ -155,7 +155,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Vendor>
     implements org.apache.avro.data.RecordBuilder<Vendor> {
 
-    private long id;
+    private java.lang.String id;
     private java.lang.String url;
 
     /** Creates a new Builder */
@@ -199,7 +199,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'id' field.
       * @return The value.
       */
-    public java.lang.Long getId() {
+    public java.lang.String getId() {
       return id;
     }
 
@@ -208,7 +208,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.pagisoft.datafetcher.model.allegro.Vendor.Builder setId(long value) {
+    public com.pagisoft.datafetcher.model.allegro.Vendor.Builder setId(java.lang.String value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -229,6 +229,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return This builder.
       */
     public com.pagisoft.datafetcher.model.allegro.Vendor.Builder clearId() {
+      id = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -277,7 +278,7 @@ public class Vendor extends org.apache.avro.specific.SpecificRecordBase implemen
     public Vendor build() {
       try {
         Vendor record = new Vendor();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
+        record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
         record.url = fieldSetFlags()[1] ? this.url : (java.lang.String) defaultValue(fields()[1]);
         return record;
       } catch (java.lang.Exception e) {

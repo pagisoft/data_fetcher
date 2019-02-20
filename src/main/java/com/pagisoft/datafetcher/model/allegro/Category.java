@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Category extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8457743088241280191L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Category\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"}]}");
+  private static final long serialVersionUID = -7928216536801264921L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Category\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -51,7 +51,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
     return DECODER.decode(b);
   }
 
-  @Deprecated public long id;
+  @Deprecated public java.lang.String id;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -64,7 +64,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
    * All-args constructor.
    * @param id The new value for id
    */
-  public Category(java.lang.Long id) {
+  public Category(java.lang.String id) {
     this.id = id;
   }
 
@@ -81,7 +81,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.Long)value$; break;
+    case 0: id = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -90,7 +90,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'id' field.
    * @return The value of the 'id' field.
    */
-  public java.lang.Long getId() {
+  public java.lang.String getId() {
     return id;
   }
 
@@ -98,7 +98,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'id' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.Long value) {
+  public void setId(java.lang.String value) {
     this.id = value;
   }
 
@@ -134,7 +134,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Category>
     implements org.apache.avro.data.RecordBuilder<Category> {
 
-    private long id;
+    private java.lang.String id;
 
     /** Creates a new Builder */
     private Builder() {
@@ -169,7 +169,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
       * Gets the value of the 'id' field.
       * @return The value.
       */
-    public java.lang.Long getId() {
+    public java.lang.String getId() {
       return id;
     }
 
@@ -178,7 +178,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.pagisoft.datafetcher.model.allegro.Category.Builder setId(long value) {
+    public com.pagisoft.datafetcher.model.allegro.Category.Builder setId(java.lang.String value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -199,6 +199,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public com.pagisoft.datafetcher.model.allegro.Category.Builder clearId() {
+      id = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -208,7 +209,7 @@ public class Category extends org.apache.avro.specific.SpecificRecordBase implem
     public Category build() {
       try {
         Category record = new Category();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
+        record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

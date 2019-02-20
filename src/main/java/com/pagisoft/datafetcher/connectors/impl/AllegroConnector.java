@@ -50,7 +50,7 @@ public class AllegroConnector implements Connector {
         Client client = Client.create();
 
         WebResource.Builder builder = client
-                .resource(API_URL + "offers/listing?category.id=258832&searchMode=CLOSED&limit=" + limit.toString() + "&offset=" + offset.toString())
+                .resource(API_URL + "offers/listing?popularity=5&category.id=260156&searchMode=REGULAR&sort=-popularity&limit=" + limit.toString() + "&offset=" + offset.toString())
                 .header("Authorization", "Bearer " + token)
                 .header("Accept", "application/vnd.allegro.public.v1+json" );
 

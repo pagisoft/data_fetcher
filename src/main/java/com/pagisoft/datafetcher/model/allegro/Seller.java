@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Seller extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -8662931811031240578L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Seller\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"company\",\"type\":\"boolean\"},{\"name\":\"superSeller\",\"type\":\"boolean\"}]}");
+  private static final long serialVersionUID = 4392782956360421123L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Seller\",\"namespace\":\"com.pagisoft.datafetcher.model.allegro\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"company\",\"type\":\"boolean\"},{\"name\":\"superSeller\",\"type\":\"boolean\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -51,7 +51,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
     return DECODER.decode(b);
   }
 
-  @Deprecated public long id;
+  @Deprecated public java.lang.String id;
   @Deprecated public boolean company;
   @Deprecated public boolean superSeller;
 
@@ -68,7 +68,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param company The new value for company
    * @param superSeller The new value for superSeller
    */
-  public Seller(java.lang.Long id, java.lang.Boolean company, java.lang.Boolean superSeller) {
+  public Seller(java.lang.String id, java.lang.Boolean company, java.lang.Boolean superSeller) {
     this.id = id;
     this.company = company;
     this.superSeller = superSeller;
@@ -89,7 +89,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.Long)value$; break;
+    case 0: id = (java.lang.String)value$; break;
     case 1: company = (java.lang.Boolean)value$; break;
     case 2: superSeller = (java.lang.Boolean)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -100,7 +100,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
    * Gets the value of the 'id' field.
    * @return The value of the 'id' field.
    */
-  public java.lang.Long getId() {
+  public java.lang.String getId() {
     return id;
   }
 
@@ -108,7 +108,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'id' field.
    * @param value the value to set.
    */
-  public void setId(java.lang.Long value) {
+  public void setId(java.lang.String value) {
     this.id = value;
   }
 
@@ -176,7 +176,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Seller>
     implements org.apache.avro.data.RecordBuilder<Seller> {
 
-    private long id;
+    private java.lang.String id;
     private boolean company;
     private boolean superSeller;
 
@@ -229,7 +229,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
       * Gets the value of the 'id' field.
       * @return The value.
       */
-    public java.lang.Long getId() {
+    public java.lang.String getId() {
       return id;
     }
 
@@ -238,7 +238,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.pagisoft.datafetcher.model.allegro.Seller.Builder setId(long value) {
+    public com.pagisoft.datafetcher.model.allegro.Seller.Builder setId(java.lang.String value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -259,6 +259,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return This builder.
       */
     public com.pagisoft.datafetcher.model.allegro.Seller.Builder clearId() {
+      id = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -344,7 +345,7 @@ public class Seller extends org.apache.avro.specific.SpecificRecordBase implemen
     public Seller build() {
       try {
         Seller record = new Seller();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
+        record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
         record.company = fieldSetFlags()[1] ? this.company : (java.lang.Boolean) defaultValue(fields()[1]);
         record.superSeller = fieldSetFlags()[2] ? this.superSeller : (java.lang.Boolean) defaultValue(fields()[2]);
         return record;

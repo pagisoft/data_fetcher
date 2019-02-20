@@ -5,7 +5,7 @@
     "fields": [
         {
             "name": "id",
-            "type": "long"
+            "type": "string"
         },
         {
             "name": "name",
@@ -19,7 +19,7 @@
 				"fields": [
 					{
 						"name": "id",
-						"type": "long"
+						"type": "string"
 					},
 					{
 						"name": "company",
@@ -178,7 +178,7 @@
 				"fields": [
 					{
 						"name": "id",
-						"type": "long"
+						"type": "string"
 					},
 					{
 						"name": "url",
@@ -195,7 +195,7 @@
 				"fields": [
 					{
 						"name": "id",
-						"type": "long"
+						"type": "string"
 					}
 				]
 			}]
