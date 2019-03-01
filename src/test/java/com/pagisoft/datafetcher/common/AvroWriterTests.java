@@ -17,13 +17,12 @@ public class AvroWriterTests {
     @Test
     public void testStoreAvroFile() {
         Connector allegroConnector = new AllegroConnector();
-        allegroConnector.getToken();
 
         List<Object> auctions = new ArrayList<Object>();
 
         for (int i=0; i < 1; i++) {
             LOGGER.info("Iteration: {}", i);
-            List<Object> objects = allegroConnector.getObjectList(100, i * 100);
+            List<Object> objects = allegroConnector.getObjectList("54045",100, i * 100);
             LOGGER.info("Auctions count in iteration: {}", objects.size());
             auctions.addAll(objects);
             LOGGER.info("Final auctions count: {}", auctions.size());
