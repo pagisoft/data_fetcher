@@ -3,6 +3,7 @@ package com.pagisoft.datafetcher.connectors.impl;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.pagisoft.datafetcher.connectors.Connector;
+import com.pagisoft.datafetcher.model.allegro.AllegroCategory;
 import com.pagisoft.datafetcher.model.allegro.Item;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -97,6 +98,50 @@ public class AllegroConnector implements Connector {
 
         completeResult.addAll(promotedListResult);
         completeResult.addAll(regularListResult);
+
+        return completeResult;
+    }
+
+    public List<Object> getCategoryList(String parentCategoryId) {
+        Client client = Client.create();
+
+        String parentCategoryQueryString = "";
+        if (parentCategoryId != null) {
+            parentCategoryQueryString = "?parent.id=" + parentCategoryId;
+        } else {
+            LOGGER.info("Getting top category list.");
+        }
+
+        WebResource.Builder builder = client
+                .resource(API_URL + "sale/categories" +
+                        parentCategoryQueryString)
+                .header("Authorization", "Bearer " + this.token)
+                .header("Accept", "application/vnd.allegro.public.v1+json" );
+
+        ClientResponse response = builder.get(ClientResponse.class);
+
+        client.destroy();
+
+        if (Response.Status.OK.getStatusCode() == response.getStatus()) {
+            return parseCategoryList(response.getEntity(String.class));
+        } else {
+            throw new RuntimeException("Incorrect response while calling REST API.");
+        }
+    }
+
+    private List<Object> parseCategoryList(String responseEntity) {
+
+        List<Object> completeResult = new ArrayList<Object>();
+
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(responseEntity).getAsJsonObject();
+
+        Gson gson = new Gson();
+        Type resultType = new TypeToken<List<AllegroCategory>>(){}.getType();
+
+        List<AllegroCategory> categoryListResult = gson.fromJson(object.get("categories"), resultType);
+
+        completeResult.addAll(categoryListResult);
 
         return completeResult;
     }
