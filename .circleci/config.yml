@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/circleci-demo-java-spring
+    steps:
+      - checkout
+      - run: mvn clean package resources assembly:assembly
+      - store_test_results:
+          path: target/surefire-reports
+
+      - store_artifacts:
+          path: target/data_fetcher_0.0.1.jar
