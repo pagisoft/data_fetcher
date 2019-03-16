@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class AllegroService {
@@ -60,11 +61,17 @@ public class AllegroService {
         for (int i=0; i < MAX_NUMBER_OF_LISTING_ITERATIONS; i++) {
             List<Object> objects = allegroConnector.getObjectList(categoryId, LIMTIT_PER_LISTING, i * LIMTIT_PER_LISTING);
 
+            Optional<Object> item = objects.stream().filter(c -> ((Item) c).getSellingMode().getPopularity().equals(0L)).findAny();
+
             auctions.addAll(objects
                     .stream()
                     .map( obj -> (Item) obj)
                     .filter( obj -> obj.getSellingMode().getPopularity() > 0)
                     .collect(Collectors.toList()));
+
+            if(item.isPresent()) {
+                return auctions;
+            }
         }
 
         LOGGER.info("Resolved {} auctions.", auctions.size());

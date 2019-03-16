@@ -29,7 +29,7 @@ public class AvroWriter {
 
     private void toAvroBinary(final List<Object> objectList) {
 
-        File avroOutputFile = new File("D:\\Dane\\" + System.currentTimeMillis() + ".avro");
+        File avroOutputFile = new File("/home/ec2-user/data/" + System.currentTimeMillis() + ".avro");
 
         final DatumWriter<Item> datumWriter = new SpecificDatumWriter<Item>(Item.class);
         final DataFileWriter<Item> dataFileWriter = new DataFileWriter<Item>(datumWriter);
