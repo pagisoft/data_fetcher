@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/circleci-demo-java-spring
     steps:
       - checkout
-      - run: mvn clean package resources assembly:assembly
+      - run: mvn clean package assembly:assembly
       - store_test_results:
           path: target/surefire-reports
 
