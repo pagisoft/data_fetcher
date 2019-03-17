@@ -76,7 +76,9 @@ public class AllegroConnector implements Connector {
         if (Response.Status.OK.getStatusCode() == response.getStatus()) {
             return parseObjectList(response.getEntity(String.class));
         } else {
-            throw new RuntimeException("Incorrect response while calling REST API.");
+            LOGGER.error("Incorrect response while calling REST API. {}", response);
+            //throw new RuntimeException("Incorrect response while calling REST API.");
+            return new ArrayList<>();
         }
     }
 
@@ -125,7 +127,9 @@ public class AllegroConnector implements Connector {
         if (Response.Status.OK.getStatusCode() == response.getStatus()) {
             return parseCategoryList(response.getEntity(String.class));
         } else {
-            throw new RuntimeException("Incorrect response while calling REST API.");
+            LOGGER.error("Incorrect response while calling REST API. {}", response);
+            //throw new RuntimeException("Incorrect response while calling REST API.");
+            return new ArrayList<>();
         }
     }
 
