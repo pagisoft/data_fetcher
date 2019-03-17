@@ -10,12 +10,5 @@ jobs:
     steps:
       - checkout
       - run: mvn clean package assembly:assembly
-      - run:
-          command: mkdir ~/data_fetcher/artifacts;
-      - run:
-          command: mkdir ~/data_fetcher/surefire-reports;
-      - store_test_results:
-          path: ~/data_fetcher/surefire-reports
-
       - store_artifacts:
-          path: ~/data_fetcher/artifacts/data_fetcher_0.0.1.jar
+          path: ~/data_fetcher/target/data_fetcher-1.0-SNAPSHOT-jar-with-dependencies.jar
