@@ -27,11 +27,13 @@ public class Main {
         for (AllegroCategory category : finalLowestTierCategoriesList) {
             allegroItems.addAll(allegroService.getItemsByCategory(category.getId()));
 
-            AvroWriter avroWriter = new AvroWriter();
-            avroWriter.storeAvroData(allegroItems);
+            if (allegroItems.size() > 100000) {
+                AvroWriter avroWriter = new AvroWriter();
+                avroWriter.storeAvroData(allegroItems);
+                allegroItems.clear();
+            }
 
             LOGGER.info("Collecting category objects [ size {} ] took: {}", allegroItems.size(), timer.elapsed().toSeconds());
-            allegroItems.clear();
         }
 
         LOGGER.info("Collecting objects [ size {} ] took: {}", allegroItems.size(), timer.stop());
