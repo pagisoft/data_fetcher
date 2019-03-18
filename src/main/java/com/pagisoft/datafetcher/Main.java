@@ -1,21 +1,27 @@
 package com.pagisoft.datafetcher;
 
-import com.google.common.base.Stopwatch;
-import com.pagisoft.datafetcher.connectors.Connector;
-import com.pagisoft.datafetcher.connectors.impl.AllegroConnector;
+import com.pagisoft.datafetcher.common.AllegroTokenFileWriter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) throws IOException {
+    private static final AllegroTokenFileWriter allegroTokenFileWriter = new AllegroTokenFileWriter();
+
+    public static void main(String[] args) {
 
         LOGGER.info("Main.");
+
+        allegroTokenFileWriter.storeToken("ddddd", "gggg");
+
+        allegroTokenFileWriter.readToken(AllegroTokenFileWriter.TokenType.ACCESS_TOKEN);
+
+        LOGGER.info(allegroTokenFileWriter.readToken(AllegroTokenFileWriter.TokenType.ACCESS_TOKEN));
+        LOGGER.info(allegroTokenFileWriter.readToken(AllegroTokenFileWriter.TokenType.REFRESH_TOKEN));
+
     }
 }

@@ -2,7 +2,6 @@ package com.pagisoft.datafetcher.connectors;
 
 import com.google.common.base.Stopwatch;
 import com.pagisoft.datafetcher.connectors.impl.AllegroConnector;
-import com.pagisoft.datafetcher.model.allegro.AllegroCategory;
 import com.pagisoft.datafetcher.model.allegro.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
