@@ -5,28 +5,35 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 public class AllegroTokenFileWriterTests {
 
     private static final Logger LOGGER = LogManager.getLogger(AllegroTokenFileWriterTests.class);
 
-    private static final AllegroTokenFileWriter allegroTokenFileWriter = new AllegroTokenFileWriter();
+    private static AllegroTokenFileWriter allegroTokenFileWriter;
 
     @Test
-    public void testReadToken() {
-        //LOGGER.info("");
+    public void testStoreAndReadToken() {
+        String allegroAccessToken = "";
+        String allegroRefreshToken = "";
+        String accessToken = "AccessTokenValue12345";
+        String refreshToken = "RefreshTokenValue12345";
 
-        String allegroToken = allegroTokenFileWriter.readToken(AllegroTokenFileWriter.TokenType.ACCESS_TOKEN);
-        LOGGER.info(allegroToken);
+        try {
+            allegroTokenFileWriter = new AllegroTokenFileWriter();
+            allegroTokenFileWriter.storeToken(accessToken, refreshToken);
 
-        Assert.assertNotEquals("", allegroToken);
-    }
+            allegroAccessToken = allegroTokenFileWriter.readToken(AllegroTokenFileWriter.TokenType.ACCESS_TOKEN);
+            allegroRefreshToken = allegroTokenFileWriter.readToken(AllegroTokenFileWriter.TokenType.REFRESH_TOKEN);
+        } catch (IOException | URISyntaxException e) {
+            LOGGER.error(e.getMessage());
+        }
 
-    @Test
-    public void testStoreToken() {
-        //LOGGER.info("");
-
-        allegroTokenFileWriter.storeToken("aaaaa", "bbbb");
-
-        //LOGGER.info("");allegroTokenFileWriter.readToken();
+        LOGGER.info(allegroAccessToken);
+        LOGGER.info(allegroRefreshToken);
+        Assert.assertEquals(accessToken, allegroAccessToken);
+        Assert.assertEquals(refreshToken, allegroRefreshToken);
     }
 }
